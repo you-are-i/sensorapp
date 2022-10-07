@@ -1,7 +1,14 @@
+# Disclaimer & Kudos
+This Repository is a copy of the https://github.com/maxisses/sensorapp.
+I made some adjustments in order to provide a scalable workshop.
+The workshop (currentl in German) can be found here.
+
+# General
 This Repository contains four applications to genereate training data for an IoT Machine Learning case to classify movements based on smartphone sensor data.
 It contains a node.js express frontend ("iot-smartphone-app") that can be accessed on the Browser with Android and iOS Smartphones. Sensor data of the accelerometer and gyroscope gets published/sent via secure Websocket over MQTT to the mosquitto MQTT Broker. 
 
 A python backend Service is subscribed ("Iot-subscriber") to the broker and writes everything to the database
+
 
 # local deployment
 
