@@ -1,6 +1,6 @@
 NODE_PORT=$1
 
-APIKEY='XXKqu0-RxMudn1BE8j_UY4k9NSArZqV24IHYFonv2H7L'
+APIKEY='inser API Key'
 
 echo "Provision port forwarding for ${NODE_PORT}"
 
