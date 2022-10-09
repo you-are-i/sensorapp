@@ -13,6 +13,7 @@ spec:
       protocol: TCP
       port: 8883
       targetPort: 8883
+      nodePort: <insert your individual portnumer>
   selector:
     deployment: mosquitto
-  type: LoadBalancer
+  type: NodePort
