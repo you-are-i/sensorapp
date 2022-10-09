@@ -1,7 +1,7 @@
 # Disclaimer & Kudos
-This Repository is a copy of the https://github.com/maxisses/sensorapp.
+This repository is a copy of the https://github.com/maxisses/sensorapp.
 I made some adjustments in order to provide a scalable workshop.
-The workshop (currentl in German) can be found here.
+The workshop (currently only in German) can be found here: https://youriboehler.gitbook.io/iot-ai-workshop/
 
 # General
 This Repository contains four applications to genereate training data for an IoT Machine Learning case to classify movements based on smartphone sensor data.
