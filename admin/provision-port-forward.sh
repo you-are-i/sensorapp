@@ -1,11 +1,16 @@
+
 NODE_PORT=$1
-
-APIKEY='inser API Key'
-
-echo "Provision port forwarding for ${NODE_PORT}"
+APIKEY=
 
 # Get Access Token
 IAM_ACCESS_TOKEN=$(curl -X POST -s 'https://iam.cloud.ibm.com/identity/token' -H 'Content-Type: application/x-www-form-urlencoded' -d "grant_type=urn:ibm:params:oauth:grant-type:apikey&apikey=${APIKEY}" | jq -r '.access_token')
+echo "IAM_ACCESS_TOKEN ${IAM_ACCESS_TOKEN}"
+
+#for i in {31006..31020}
+#do  NODE_PORT=$i
+
+
+echo "Provision port forwarding for ${NODE_PORT}"
 
 # Create Backendpool
 BACKENDPOOL_RESPONSE=$(
@@ -47,6 +52,7 @@ EOF
 );
 BACKENDPOOL_ID=$(echo $BACKENDPOOL_RESPONSE | jq -r '.id');
 
+echo $BACKENDPOOL_RESPONSE
 echo "Created Backendpool ${BACKENDPOOL_ID}";
 
 # Create a load balancer listener
@@ -74,3 +80,5 @@ echo "Created Frontend ${FRONTEND_ID}";
 
 echo "Test with:"
 echo "wscat -c ws://hslu-openshift-cluster-e756cf5e9c60afaa4e8e24ae78ebfb82-0000.eu-de.containers.appdomain.cloud:${NODE_PORT}"
+
+#done 
