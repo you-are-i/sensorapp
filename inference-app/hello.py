@@ -89,11 +89,12 @@ def transform_and_post_messages(data_cache):
     # manually define and pass the array(s) of values to be scored in the next line
     payload_scoring = {"input_data": [{"fields": column_names, "values": [aggregated_data]}]}
     try:
-        response_scoring = requests.post(scoring_endpoint, json=payload_scoring, headers={'Authorization': 'Bearer ' + mltoken})
+        response_scoring = requests.post(scoring_endpoint, json=payload_scoring, headers={'Content-Type': 'application/json', 'Authorization': 'Bearer ' + mltoken})
     except:
         token_response = requests.post('https://iam.cloud.ibm.com/identity/token', data={"apikey": API_KEY, "grant_type": 'urn:ibm:params:oauth:grant-type:apikey'})
         mltoken = token_response.json()["access_token"]
         response_scoring = requests.post(scoring_endpoint, json=payload_scoring, headers={'Authorization': 'Bearer ' + mltoken})
+        print('IAM Token is '+ mltoken)
 
 
     print("Scoring response for user: " + data_cache[0][0])
