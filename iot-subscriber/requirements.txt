@@ -1,7 +1,9 @@
 psycopg2-binary
-flask==2.1.3
+flask==2.0.3
 datetime
-eventlet
 Flask-MQTT
-Flask-SocketIO==4.3.0
+Flask-SocketIO==4.3.1
 Flask-Bootstrap
+requests
+datetime
+Werkzeug==2.0.3
