@@ -1,4 +1,4 @@
-FROM python:3.7-slim
+FROM python:3.6-slim-stretch
 
 RUN apt-get -y update && apt-get -y install gcc wget unzip
 
