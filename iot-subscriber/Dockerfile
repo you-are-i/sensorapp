@@ -1,4 +1,4 @@
-FROM python:3.12-slim
+FROM python:3.8-slim
 
 RUN apt-get -y update && apt-get -y install gcc wget unzip
 
