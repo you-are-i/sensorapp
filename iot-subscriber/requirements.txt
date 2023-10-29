@@ -7,3 +7,4 @@ Flask-Bootstrap
 requests
 datetime
 Werkzeug==2.0.3
+eventlet
